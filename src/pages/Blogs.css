@@ -1,0 +1,19 @@
+#blogcard1
+{
+    background-image: url('../images//blogs/top-1.png');
+    background-size: cover;
+    height: 25vh;
+    color: white;
+}
+
+#blogscard2
+{
+    background-image: url('../images/aboutus/2.png');
+    background-size: cover;
+}
+
+#blogscard3
+{
+    background-image: url('../images/aboutus/2.png');
+    background-size: cover;
+}

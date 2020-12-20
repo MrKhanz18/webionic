@@ -1,0 +1,36 @@
+#aboutcard1
+{
+    background-image: url('../images/aboutus/top-2.png');
+    background-size: cover;
+    width: 94%;
+    height: 25vh;
+}
+#aboutbtn
+{
+    font-size: 10px;
+}
+
+#aboutcard2
+{
+    background: linear-gradient(25deg, orangered 40%, white 70% );
+    color: black;
+}
+
+#aboutcard3
+{
+    background-image: url('../images//aboutus/2.png');
+    color: whitesmoke;
+}
+
+#aboutcard4
+{
+    background: linear-gradient(25deg, orangered 40%, white 70% );
+    color: black;
+}
+
+#aboutcard5
+{
+    background-image: url('../images//aboutus/4.png');
+    background-size: cover;
+    color: black;
+}

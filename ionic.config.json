@@ -1,0 +1,7 @@
+{
+  "name": "wodoworker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
