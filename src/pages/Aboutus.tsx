@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonIcon, IonImg, IonPage, IonRadio, IonRow } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonHeader, IonIcon, IonImg, IonPage, IonRadio, IonRow, IonToolbar } from '@ionic/react';
 import React from 'react'
 import './Aboutus.css'
 
@@ -8,6 +8,13 @@ const Aboutus: React.FC = () =>{
 return(
     <IonPage>
         <IonContent>
+
+             {/*navbar*/}
+            <IonHeader>
+            <IonToolbar>
+            </IonToolbar>
+            </IonHeader>
+
             <IonCard id='aboutcard1'>
                 <IonCardContent>
                     <h2 className='text-white'>ABOUT THE APP</h2>
@@ -79,13 +86,13 @@ return(
             </IonCard>
 
             <IonCard id='aboutcard5'>
-                <IonCardTitle class='text-dark'>4. Call rates</IonCardTitle>
+                <IonCardTitle class='text-light'>4. Call rates</IonCardTitle>
                 <IonCardContent>
-                    <p><b>While we are providing you with wallet, we also
+                    <p>While we are providing you with wallet, we also
                     provide a budget friendly call services at a
                     minimal call rates.Call ratres will be
                     as follows Rs.2 for the initial minutes and
-                    Rs. 0.5 for subsequent minutes</b></p>
+                    Rs. 0.5 for subsequent minutes</p>
                 </IonCardContent>
             </IonCard>
         </IonContent>

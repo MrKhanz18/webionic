@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/react';
+import { IonApp, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuButton, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route, useLocation } from 'react-router-dom';
 /* Core CSS required for Ionic components to work properly */
@@ -29,6 +29,14 @@ import Menu from './components/Menu';
 const App: React.FC = () => {
   return (
     <IonApp>
+      <IonHeader>
+      <IonToolbar>
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
+          <IonTitle>WODO WORKER</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />

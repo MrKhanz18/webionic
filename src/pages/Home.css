@@ -1,23 +1,35 @@
 #card1
 {
-    background: linear-gradient(25deg, orangered 40%, white 70% );
-    height: 40vh;
+    background-image: url('../images/home/top.png');
+    background-size: cover;
+    height: 36%;
 }
 #homeh3
 {   
-    color: black;
+    color: white;
     position: absolute;
     right: 0;
-    margin-top: 7vh;
+    margin-top: 2vh;
     margin-right: 3px;
     text-align: left;
 }
+#same
+{
+    text-align: left;
+    color: white;
+}
+
+#slide
+{
+    width: 100%;
+}
+
 #homebutton
 {
     border-radius: 10px;
     position: absolute;
     right: 0;
-    margin-top: 22vh;
+    margin-top: 17vh;
     margin-right: 82px;
     text-align: left;
 }

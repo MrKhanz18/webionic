@@ -1,5 +1,6 @@
 import {
     IonContent,
+  IonHeader,
     IonIcon,
     IonItem,
     IonLabel,
@@ -8,6 +9,7 @@ import {
     IonMenu,
     IonMenuToggle,
     IonNote,
+    IonToolbar,
   } from '@ionic/react';
   
   import React from 'react';
@@ -69,7 +71,8 @@ import {
     return (
       <IonMenu contentId="main" type="overlay">
         <IonContent>
-          <IonList id="inbox-list">
+          
+          <IonList class='mt-5' id="inbox-list">
             <IonListHeader>Wodo Workers</IonListHeader>
             <IonNote>Equation to serve you</IonNote>
             {appPages.map((appPage, index) => {

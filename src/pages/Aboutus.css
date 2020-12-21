@@ -2,8 +2,7 @@
 {
     background-image: url('../images/aboutus/top-2.png');
     background-size: cover;
-    width: 94%;
-    height: 25vh;
+    height: 30%;
 }
 #aboutbtn
 {
@@ -12,7 +11,7 @@
 
 #aboutcard2
 {
-    background: linear-gradient(25deg, orangered 40%, white 70% );
+    background-color: white;
     color: black;
 }
 
@@ -24,7 +23,7 @@
 
 #aboutcard4
 {
-    background: linear-gradient(25deg, orangered 40%, white 70% );
+    background-color: white;
     color: black;
 }
 
@@ -32,5 +31,5 @@
 {
     background-image: url('../images//aboutus/4.png');
     background-size: cover;
-    color: black;
+    color: white;
 }

@@ -1,21 +1,53 @@
-import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonImg, IonLabel, IonMenuButton, IonPage, IonRow, IonSlide, IonSlides, IonTitle, IonToolbar } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonImg, IonLabel, IonPage, IonRow, IonSlide, IonSlides, IonSpinner, IonToolbar,  } from '@ionic/react';
 import { logoFacebook, logoGoogle, logoInstagram, logoLinkedin, logoWhatsapp } from 'ionicons/icons';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import axios from 'axios'
 import ExploreContainer from '../components/ExploreContainer';
 import './Home.css';
 
 const Home: React.FC = () => {
 
+  const [customer, setCustomer] = useState<any[]>([]);
+  const [worker, setWorker] = useState<any[]>([]);
+  
   const slideOpts = {
     initialSlide: 1,  
-    speed: 10
+    speed: 10,
   };
+
+  const onSpin = () => (
+    <IonContent>
+      <IonSpinner class='text-center' name='circles' color='primary' />
+    </IonContent>
+  ) 
+
+  useEffect(() => {
+    axios.get("http://api.wodoworker.com/website/data",{
+      headers:{
+        page:"Home",
+      }
+    })
+    .then(res => {
+        console.log(res.data.data);
+        // console.log(res.data.data.customer);
+        setCustomer(res.data.data.customer)
+        // console.log(res.data.data.worker);
+        setWorker(res.data.data.worker)
+    })
+    console.log("hello");
+    
+  }, []);
 
   return (
   <IonPage>
     <IonContent>
-
+        
+        {/*navbar*/}
+        <IonHeader>
+          <IonToolbar>
+          </IonToolbar>
+        </IonHeader>
         {/* top phone */}
         <IonCard id='card1'>
           <IonCardContent>
@@ -23,91 +55,34 @@ const Home: React.FC = () => {
             <h1 id='homeh3'>Try out our<br/>awesome mobile<br/> application</h1>
             </IonRow>
             <IonRow>
-            <button id='homebutton' className='btn  btn-sm btn-outline-light'>DOWNLOAD</button>
+            <button id='homebutton' className='btn  btn-sm btn-outline-light' onClick={()=>alert('Downloading')}>DOWNLOAD</button>
             </IonRow>
-            <IonImg id='homephone' src={require('../images/home/phone.png')} alt='mobile'/>
           </IonCardContent>
         </IonCard>
       
           {/* to-do cards */}
-          <IonSlides pager={true} options={slideOpts}>
-            <IonSlide>
-              <IonRow>
-              <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            </IonRow>
-            </IonSlide>
-            <IonSlide>
-              <IonRow>
-              <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            </IonRow>
-            </IonSlide>
-            <IonSlide>
-              <IonRow>
-              <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            </IonRow>
-            </IonSlide>
-        
-          </IonSlides>
+          {customer.length > 1 ?
+           <IonSlides pager={true} options={slideOpts}>
+            
+            {customer.map(cust =>  
+            <IonSlide key={cust.id} id='slide'>
+               <IonRow>
+               <IonCol>
+             <IonCard id='slide'>
+               <IonCardHeader id='same'>
+                 <IonLabel>Name - {cust.name}</IonLabel>
+               </IonCardHeader>
+               <IonCardContent id='same'>
+                 <IonLabel>Rating - {cust.rating}</IonLabel><br/>
+                 <IonLabel>Review - {cust.review}</IonLabel>
+               </IonCardContent>
+             </IonCard>
+             </IonCol>
+             </IonRow>
+             </IonSlide>)}        
+         
+           </IonSlides> : 
+           onSpin()}
 
         {/* stats */}
             <IonCard>
@@ -115,84 +90,32 @@ const Home: React.FC = () => {
           </IonCard>
 
         {/* to-do cards */}
+        {worker.length > 1 ?
         <IonSlides pager={true} options={slideOpts}>
-            <IonSlide>
+            
+        {worker.map(work =>  
+           <IonSlide key={work.id}>
               <IonRow>
               <IonCol>
             <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
+              <IonCardHeader id='same'>
+                <IonLabel>Name - {work.name}</IonLabel>
               </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
+              <IonCardContent id='same'>
+                <IonLabel>Skills - {work.skill}</IonLabel><br/>
+                <IonLabel>Rating - {work.rating}</IonLabel><br/>
+                <IonLabel>Review - {work.review}</IonLabel>
+              </IonCardContent>
             </IonCard>
             </IonCol>
             </IonRow>
-            </IonSlide>
-            <IonSlide>
-              <IonRow>
-              <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            </IonRow>
-            </IonSlide>
-            <IonSlide>
-              <IonRow>
-              <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            <IonCol>
-            <IonCard>
-              <IonCardHeader>
-                  Shivanshu Dubey
-              </IonCardHeader>
-            </IonCard>
-            </IonCol>
-            </IonRow>
-            </IonSlide>
+            </IonSlide>)} 
+                  
         
-          </IonSlides>
+          </IonSlides> :
+          onSpin()
+
+        }
         
         {/* imp workers */}
           <IonCard>

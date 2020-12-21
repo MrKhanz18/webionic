@@ -1,4 +1,4 @@
-import { IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonFooter, IonIcon, IonPage, IonRow } from '@ionic/react'
+import { IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonPage, IonRow, IonToolbar } from '@ionic/react'
 import { logoFacebook, logoGoogle, logoInstagram, logoLinkedin, logoWhatsapp } from 'ionicons/icons'
 import React from 'react'
 import './Blogs.css'
@@ -7,6 +7,13 @@ const Blogs: React.FC = () => {
     return (
         <IonPage>
             <IonContent>
+
+                 {/*navbar*/}
+                <IonHeader>
+                <IonToolbar>
+                </IonToolbar>
+                </IonHeader>
+
                 <IonCard id='blogcard1'>
                     <IonCardContent>
                         <h1>Check out our</h1>
