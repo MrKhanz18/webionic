@@ -17,8 +17,8 @@ const Home: React.FC = () => {
   };
 
   const onSpin = () => (
-    <IonContent>
-      <IonSpinner class='text-center' name='circles' color='primary' />
+    <IonContent class="text-center">
+      <IonSpinner name='circles' color='primary' />
     </IonContent>
   ) 
 

@@ -51,13 +51,13 @@ import {
     },
     {
       title: 'WebApp',
-      url: '/page/WebApp',
+      url: '/page/webapp',
       iosIcon: cloudDoneOutline,
       mdIcon: cloudDoneSharp
     },
     {
       title: 'Download',
-      url: '/page/Download',
+      url: '/page/download',
       iosIcon: cloudDownloadOutline,
       mdIcon: cloudDownloadSharp
     }

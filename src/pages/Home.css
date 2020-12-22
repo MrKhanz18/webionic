@@ -43,3 +43,23 @@
 {
     text-align: left;
 }
+
+
+/* for downloadss*/
+
+#playicon
+{
+    font-size: 15px;
+}
+
+#appleicon
+{
+    font-size: 15px;
+}
+
+#dbtnid
+{
+    border-radius: 5px;
+    width: 100%;
+}
+

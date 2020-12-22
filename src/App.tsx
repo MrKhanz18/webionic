@@ -25,6 +25,8 @@ import Aboutus from './pages/Aboutus';
 import Blogs from './pages/Blogs';
 import { briefcaseOutline, briefcaseSharp, bulbOutline, bulbSharp, cafeOutline, cafeSharp, cloudDoneOutline, cloudDoneSharp, cloudDownloadOutline, cloudDownloadSharp, homeOutline, homeSharp } from 'ionicons/icons';
 import Menu from './components/Menu';
+import WebApp from './pages/WebApp';
+import Download from './pages/Download';
  
 const App: React.FC = () => {
   return (
@@ -44,6 +46,8 @@ const App: React.FC = () => {
             <Route path="/page/home" component={Home} exact />
             <Route path="/page/aboutus" component={Aboutus} exact />
             <Route path="/page/blogs" component={Blogs} exact />
+            <Route path="/page/webapp" component={WebApp} exact />
+            <Route path="/page/download" component={Download} exact />
             <Redirect from="/" to="/page/home" exact />
           </IonRouterOutlet>
         </IonSplitPane>
