@@ -27,6 +27,12 @@ import { briefcaseOutline, briefcaseSharp, bulbOutline, bulbSharp, cafeOutline, 
 import Menu from './components/Menu';
 import WebApp from './pages/WebApp';
 import Download from './pages/Download';
+import Partner from './pages/Partner';
+import Workwithus from './pages/Workwithus';
+import Dispute from './pages/Dispute';
+import Refund from './pages/Refund';
+import Codeof from './pages/Codeof';
+import Test from './pages/Test';
  
 const App: React.FC = () => {
   return (
@@ -48,6 +54,12 @@ const App: React.FC = () => {
             <Route path="/page/blogs" component={Blogs} exact />
             <Route path="/page/webapp" component={WebApp} exact />
             <Route path="/page/download" component={Download} exact />
+            <Route path="/page/partner" component={Partner} exact />
+            <Route path="/page/terms" component={Workwithus} exact />
+            <Route path="/page/dispute" component={Dispute} exact />
+            <Route path="/page/refund" component={Refund} exact />
+            <Route path="/page/coc" component={Codeof} exact />
+            <Route path="/page/test" component={Test} exact />
             <Redirect from="/" to="/page/home" exact />
           </IonRouterOutlet>
         </IonSplitPane>

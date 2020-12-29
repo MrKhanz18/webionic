@@ -48,6 +48,7 @@ const Home: React.FC = () => {
           <IonToolbar>
           </IonToolbar>
         </IonHeader>
+      
         {/* top phone */}
         <IonCard id='card1'>
           <IonCardContent>
@@ -59,7 +60,59 @@ const Home: React.FC = () => {
             </IonRow>
           </IonCardContent>
         </IonCard>
+
+        {/* 3 cards */}
+        <IonSlides pager={true} options={slideOpts}>
+
+          <IonSlide>      
+            <IonCard>
+              <IonCardHeader>
+                <h2 className='text-success text-center'>What ?</h2>
+              </IonCardHeader>
+              <IonCardContent>
+                <p>
+                We have made a simple but powerful step with WODO towards bridging the gap between Recruiters and Employees. This is the first platform connecting workers with recruiters at Hyperlocal level. We, at WODO, are providing you with employees fitting your requirements while keeping your budget in account. You don’t need to search elsewhere, WODO is your one stop solution regarding hiring and working within your locality. You get the workers with skills, knowledge and experience perfect for your work. The most significant feature of WODO is that all the workers we will be providing will be from your geographical area i.e. your city and nearby area, so you don’t need to search elsewhere. 
+                </p>
+              </IonCardContent>
+            </IonCard>
+          </IonSlide>
       
+          <IonSlide>
+          <IonCard>
+          <IonCardHeader>
+            <h2 className='text-success text-center'>Why ?</h2>
+          </IonCardHeader>
+          <IonCardContent>
+            <p>
+            While you are recruiting at a local level, you require a middleman to hire a worker. And you have to pay for both of them.  Paying more money to the middleman than the worker is not even good for you and the worker. And work is not even up to the mark.<br/><br/>
+            Just for removing these types of problems from your life, we are here. By using WODO, you can directly Contact the worker with the required skills under your budget and can remove the middleman, so you don't have to pay them.
+            </p>
+          </IonCardContent>
+        </IonCard>
+
+          </IonSlide>
+
+          <IonSlide>
+          <IonCard>
+          <IonCardHeader>
+            <h2 className='text-success text-center'>How ?</h2>
+          </IonCardHeader>
+          <IonCardContent>
+            <p>
+            We all are aware of the challenges faced by the skilled workforce, like, going door  to doors for work, hardly getting any work and after that, not getting the right value for the work. And most of the time employer makes a big sum of money from your work.<br/><br/>
+            But by using WODO, first of all you are removing the middleman, and by that you will get the full amount of money which you should get for your skillset.
+            </p>
+          </IonCardContent>
+        </IonCard>
+          </IonSlide>
+
+        </IonSlides>
+
+        {/* stats */}
+            <IonCard>
+              <IonImg id='statimg' src={require("../images/home/stats.png")} alt='stats'/>
+          </IonCard>
+
           {/* to-do cards */}
           {customer.length > 1 ?
            <IonSlides pager={true} options={slideOpts}>
@@ -84,9 +137,10 @@ const Home: React.FC = () => {
            </IonSlides> : 
            onSpin()}
 
-        {/* stats */}
-            <IonCard>
-              <IonImg id='statimg' src={require("../images/home/stats.png")} alt='stats'/>
+        
+        {/* imp workers */}
+          <IonCard>
+            <IonImg src={require('../images/home/imp for worker.png')} alt="impworkers"/>
           </IonCard>
 
         {/* to-do cards */}
@@ -116,63 +170,59 @@ const Home: React.FC = () => {
           onSpin()
 
         }
-        
-        {/* imp workers */}
-          <IonCard>
-            <IonImg src={require('../images/home/imp for worker.png')} alt="impworkers"/>
-          </IonCard>
+              
 
         {/* footerr */}
         <IonFooter id="foots">
-          <IonRow class="justify-content-center bg-warning">
-            <IonCol size="4" class='d-flex justify-content-center'>
+          <IonRow class="justify-content-center bg-warning"> 
               <small id="text-light text-center">Join us</small>
-            </IonCol>
-            <IonCol size="4" class='d-flex justify-content-center'>
+          </IonRow>
+          <IonRow class="justify-content-center">
+                <IonCol size="4" class="d-flex justify-content-center">
+                  <small id="fh6">We have made a simple but<br/>powerful step with</small>
+                </IonCol>
+                <IonCol size="4" class="d-flex justify-content-center">
+                <small id="fh6">We have made a simple but<br/>powerful step with</small>
+                
+                </IonCol> 
+                <IonCol size="4" class="d-flex justify-content-center">
+                <small id="fh6">We have made a simple but<br/>powerful step with</small>
+                </IonCol>
+          </IonRow>
+
+          <IonRow class='justify-content-center bg-warning'>
               <small id="text-light text-center">Work with us</small>
-            </IonCol>
-            <IonCol size="4" class='d-flex justify-content-center'>
+          </IonRow>
+          <IonRow class="justify-content-center">
+                <IonCol size="4"class="d-flex justify-content-center">
+                  <small id="fh6">We have made a simple but<br/>powerful step with</small>
+                </IonCol>
+                <IonCol size="4" class="d-flex justify-content-center">
+                <small id="fh6">We have made a simple but<br/>powerful step with</small>
+                
+                </IonCol> 
+                <IonCol size="4" class="d-flex justify-content-center">
+                <small id="fh6">We have made a simple but<br/>powerful step with</small>
+                </IonCol>
+          </IonRow>
+
+
+          <IonRow class='justify-content-center bg-warning'>
               <small id="text-light text-center">Link</small>
-            </IonCol>
           </IonRow>
-
           <IonRow class="justify-content-center">
-            <IonCol size="4" class="d-flex justify-content-center">
-              <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            </IonCol>
-            <IonCol size="4" class="d-flex justify-content-center">
-            <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            
-            </IonCol> 
-            <IonCol size="4" class="d-flex justify-content-center">
-            <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            </IonCol>
-          </IonRow>
-
-          <IonRow class="justify-content-center">
-            <IonCol size="4"class="d-flex justify-content-center">
-              <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            </IonCol>
-            <IonCol size="4" class="d-flex justify-content-center">
-            <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            
-            </IonCol> 
-            <IonCol size="4" class="d-flex justify-content-center">
-            <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            </IonCol>
-          </IonRow>
-
-          <IonRow class="justify-content-center">
-            <IonCol size="4" class="d-flex justify-content-center">
-              <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            </IonCol>
-            <IonCol size="4" class="d-flex justify-content-center">
-            <small id="fh6">We have made a simple but<br/>powerful step with</small>
-            
-            </IonCol> 
-            <IonCol size="4" class="d-flex justify-content-center">
-            <small id='fh6'>We have made a simple but<br/>powerful step with</small>
-            </IonCol>
+                <IonCol size="3" class="d-flex justify-content-center">
+                  <a href="/page/terms"><small id="fh6" >Terms and Conditions</small></a>
+                </IonCol>
+                <IonCol size="3" class="d-flex justify-content-center">
+                <a href="/page/coc"><small id="fh6">Code Of Conduct</small></a>
+                </IonCol> 
+                <IonCol size="3" class="d-flex justify-content-center">
+                <a href="/page/dispute"><small id='fh6'>Dispute</small></a>
+                </IonCol>
+                <IonCol size="3" class="d-flex justify-content-center">
+                <a href="/page/refund"><small id='fh6'>Refund</small></a>
+                </IonCol>
           </IonRow>
 
           <IonRow class="justify-content-center">

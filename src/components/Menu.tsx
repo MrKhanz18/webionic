@@ -45,7 +45,7 @@ import {
     },
     {
       title: 'Partnership',
-      url: '/page/Partner',
+      url: '/page/partner',
       iosIcon: cafeOutline,
       mdIcon: cafeSharp
     },

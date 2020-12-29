@@ -63,14 +63,27 @@ return(
             <IonCard id='aboutcard4'>
                 <IonCardTitle class='text-dark'>3. Features</IonCardTitle>
                 <IonCardContent>
-                    <p>WODO is the easiest way for customers to search and hire workers at fingertips. WODO is packed with Customer-friendly features.
-                    Customers, if hired workers earlier, can save the workers details to help them get referred in future.We have made it easy for our customers, so that they need not worry about future recruitments.
+                    <p>WODO is the easiest way for customers to search and hire workers at fingertips. WODO is packed with Customer-friendly features.</p>
+
+                    <IonCard id='aboutcard4'>
+                        <IonCardContent>
+                            <p>Customers, if hired workers earlier, can save the workers details to help them get referred in future.We have made it easy for our customers, so that they need not worry about future recruitments.</p>
+                        </IonCardContent>
+                    </IonCard>
+                    <IonCard id='aboutcard4'>
+                        <IonCardContent>
+                            <p>Wants to know about the worker, look at their history and how many people saved them for the next work.</p>
+                        </IonCardContent>
+                    </IonCard>
+                    <IonCard id='aboutcard4'>
+                        <IonCardContent>
+                            <p>Communicate with workers with full privacy and without sharing your personal details with our in-app communication features.</p>
+                        </IonCardContent>
+                    </IonCard>
+                    
 
 
-                    We have made it even simpler for customers by taking a step further.The history of the workers previously hired get saved and Customers can decide whether to hire the corresponding workers or not by viewing their history.
-
-
-                    We have also got you covered regarding communication between customers and workers.WODO has a feature packed wallet which can be recharge to communicate via calls with workers.Calls can be made through the app only.</p>
+                    
 
                     <IonRow class='justify-content-center'>
                         <IonImg src={require('../images/aboutus/3.1.png')} alt='3.1'/>

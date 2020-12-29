@@ -1,9 +1,37 @@
-import { IonCard, IonCardContent, IonCardTitle, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonPage, IonRow, IonToolbar } from '@ionic/react'
-import { logoFacebook, logoGoogle, logoInstagram, logoLinkedin, logoWhatsapp } from 'ionicons/icons'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonFooter, IonHeader, IonIcon, IonLabel, IonModal, IonPage, IonRow, IonSpinner, IonToolbar } from '@ionic/react'
+import { closeCircleSharp, logoFacebook, logoGoogle, logoInstagram, logoLinkedin, logoWhatsapp } from 'ionicons/icons'
 import './Blogs.css'
 
 const Blogs: React.FC = () => {
+    
+    // variable;
+    const [ obj, setObj] = useState({
+        id:{},
+    });
+    const [ Blogs, setBlogs ] = useState<any[]>([])
+    const [ blogTemp, setBlogTemp ] = useState<any[]>([])
+    const [ showModal, setShowModal ] = useState(false);
+
+    // functions
+    async function showArticle(bid:any)
+    {
+       alert('loading ....')
+    }
+
+    useEffect(()=>{
+        axios.get("https://api.wodoworker.com/website/data",{
+            headers:{
+             page:"Blog"   
+            }
+        })
+        .then(res => { 
+            console.log(res.data.data)
+            setBlogs(res.data.data);
+        })
+    },[])
+
     return (
         <IonPage>
             <IonContent>
@@ -13,6 +41,8 @@ const Blogs: React.FC = () => {
                 <IonToolbar>
                 </IonToolbar>
                 </IonHeader>
+                
+                {/* Blogs Top */}
 
                 <IonCard id='blogcard1'>
                     <IonCardContent>
@@ -21,23 +51,22 @@ const Blogs: React.FC = () => {
                     </IonCardContent>
                 </IonCard>
 
-                <IonCard id='blogscard2'>
-                    <IonCardTitle class='text-center'>
-                     Multiple section algorithm
-                    </IonCardTitle>
-                    <IonCardContent>
-                        <p>WODO is pre-programmed with Multiple Section Algorithm which analyses your skills and knowledge and provide you work accordingly.You won't have to worry about your budget.Here we provide customers with satisfaction in, whatever budget they have.Customers can hire skilled workers according to their requirements in favourable budget</p>
-                    </IonCardContent>
-                </IonCard>
-            
-                <IonCard id='blogscard3'>
-                    <IonCardTitle class='text-center'>
-                     Multiple section algorithm
-                    </IonCardTitle>
-                    <IonCardContent>
-                        <p>WODO is pre-programmed with Multiple Section Algorithm which analyses your skills and knowledge and provide you work accordingly.You won't have to worry about your budget.Here we provide customers with satisfaction in, whatever budget they have.Customers can hire skilled workers according to their requirements in favourable budget</p>
-                    </IonCardContent>
-                </IonCard>
+                {/* Blogs Cards  */}
+                {Blogs.length > 1 ?
+                Blogs.map(bl => 
+                    <IonCard id='blogscard2' key={bl.id} onClick={() => showArticle(bl.id)}>
+                        <IonCardHeader>
+                            <h6 className='text-center text-light'>{bl.title}</h6>
+                        </IonCardHeader>
+                        <IonCardContent>
+                            <p className='text-center text-light'>{bl.meta.keyword}</p>
+                        </IonCardContent>
+                    </IonCard>
+                    ):
+                    <IonContent className='text-center'>
+                        <IonSpinner name="dots" color='primary'/>
+                    </IonContent>}
+               
 
                {/* footer */}
                <IonFooter id="foots">
@@ -115,6 +144,14 @@ const Blogs: React.FC = () => {
                 </IonRow>
             </IonFooter>
 
+               {/*-----------------------------------*/}
+               {
+                  blogTemp.map(b => 
+                    <IonLabel>
+                        {b}
+                    </IonLabel>)
+               }
+               
 
             </IonContent>
         </IonPage>
